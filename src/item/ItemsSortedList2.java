@@ -22,7 +22,18 @@ public class ItemsSortedList2 {
 	 * */
 	boolean isSortedList(ArrayList<Item> l){
 		/*TODO*/
-		return true;
+		Boolean re = true;
+		for (int i=1; i<l.size(); i++){
+			if (l.get(i-1).getPrice()>l.get(i).getPrice()){
+				re = false;
+				break;
+			}
+		}
+		return re;
+	}
+	
+	public ArrayList<Item> getPannier(){
+		return panierList;
 	}
 	/*
 	 * Performs a dichotomic search since panierList is always sorted 

@@ -41,37 +41,56 @@ public class TestItemsSortedList3 {
 	public void tearDown() throws Exception {
 	}
 
+	@Test 
+	public void testIsExistsitems1(){
+		assertNotNull(items1.getPannier());
+	}
+	
+	@Test 
+	public void testIsExistsitems2(){
+		assertNotNull(items2.getPannier());
+	}
 	@Test
+	public void testIsNotEmptyItems1(){
+		assertFalse(items1.getPannier().size()==0);
+	}
+	
+	@Test
+	public void testIsNotEmptyItems2(){
+		assertFalse(items2.getPannier().size()==0);
+	}
+	
+	@Test(timeout=6000)
 	public void testPremierElem() {
 		assertTrue("tableau court",items1.isPresentArticle(new Item("tofu",5)));
 		assertTrue("tableau long",items2.isPresentArticle(new Item("acarien",10)));
 	}
 
-	@Test
+	@Test(timeout=6000)
 	public void testDernierElem() {
 		assertTrue(items1.isPresentArticle(new Item("byciclette",350)));
 		assertTrue("tableau long",items2.isPresentArticle(new Item("acarien",300)));
 	}
 	
-	@Test
+	@Test(timeout=6000)
 	public void testElemPair() {
 		assertTrue(items1.isPresentArticle(new Item("jeans",30)));
 		assertTrue("tableau long",items2.isPresentArticle(new Item("acarien",150)));
 	}
 	
-	@Test
+	@Test(timeout=6000)
 	public void testElemImpair() {
 		assertTrue(items1.isPresentArticle(new Item("guitar",100)));
 		assertTrue("tableau long",items2.isPresentArticle(new Item("acarien",200)));
 	}
 	
-	@Test
+	@Test(timeout=6000)
 	public void testErreurNom() {
 		assertFalse(items1.isPresentArticle(new Item("jeanne",30)));
 		assertFalse("tableau long",items2.isPresentArticle(new Item("acarienne",150)));
 	}
 	
-	@Test
+	@Test(timeout=6000)
 	public void testErreurPrix() {
 		assertFalse(items1.isPresentArticle(new Item("guitar",150)));
 		assertFalse("tableau long",items2.isPresentArticle(new Item("acarien",205)));

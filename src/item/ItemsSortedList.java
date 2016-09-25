@@ -33,12 +33,8 @@ public class ItemsSortedList {
 		return re;
 	}
 	
-	public ArrayList<Item> getPanierList() {
+	public ArrayList<Item> getPannier(){
 		return panierList;
-	}
-	
-	public void setPanierList(ArrayList<Item> panierList) {
-		this.panierList = panierList;
 	}
 	/*
 	 * Performs a dichotomic search since panierList is always sorted 

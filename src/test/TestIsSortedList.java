@@ -44,17 +44,17 @@ public class TestIsSortedList {
 	
 	@Test
 	public void testEmptTab(){
-		assertNotNull(items0.getPanierList());
+		assertNotNull(items0);
 	}
 
 	@Test
 	public void testNotSorted() {
-		assertNotNull(items1.getPanierList());
+		assertFalse(items2.getPannier().size()==0);
 	}
 	
 	@Test
 	public void testSorted() {
-		assertNotNull(items2.getPanierList());
+		assertNotNull(items2);
 	}
 	
 	
